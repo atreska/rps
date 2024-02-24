@@ -52,5 +52,12 @@ function getUserChoice() {
 }
 
 
-console.log(startRound(getUserChoice(), getComputersChoice()));
+// console.log(startRound(getUserChoice(), getComputersChoice()));
 
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        console.log(startRound(getUserChoice(), getComputersChoice()));
+    }
+}
+
+playGame();
