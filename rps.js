@@ -21,30 +21,30 @@ function startRound(playerSelection, computerSelection) {
     let roundWinner = '';
 
     if (user === computer) {
-        console.log(`You chose "${user}" & Computer chooses "${computer}"`);
+        console.log(`You chose "${user}" & Computer chose "${computer}"`);
         console.log('Round Ends in a TIE!');
     } else if (user === 'rock' && computer === 'scissors') {
         console.log(`You chose "${user}" & Computer chose "${computer}"`);
         console.log('You Won! Rock Beats Scissors!')
         roundWinner = 'user';
     } else if (user === 'rock' && computer === 'paper') {
-        console.log(`You chose "${user}" & Computer chooses "${computer}"`);
+        console.log(`You chose "${user}" & Computer chose "${computer}"`);
         console.log('You Lost! Paper Beats Rock!')
         roundWinner = 'computer';
     } else if (user === 'scissors' && computer === 'rock') {
-        console.log(`You chose "${user}" & Computer chooses "${computer}"`);
+        console.log(`You chose "${user}" & Computer chose "${computer}"`);
         console.log('You Lost! Rock Beats Scissors!')
         roundWinner = 'computer';
     } else if (user === 'scissors' && computer === 'paper') {
-        console.log(`You chose "${user}" & Computer chooses "${computer}"`);
+        console.log(`You chose "${user}" & Computer chose "${computer}"`);
         console.log('You Won! Scissors Beats Paper!')
         roundWinner = 'user';
     } else if (user === 'paper' && computer === 'rock') {
-        console.log(`You chose "${user}" & Computer chooses "${computer}"`);
+        console.log(`You chose "${user}" & Computer chose "${computer}"`);
         console.log('You Won! Paper Beats Rock!')
         roundWinner = 'user';
     } else if (user === 'paper' && computer === 'scissors') {
-        console.log(`You chose "${user}" & Computer chooses "${computer}"`);
+        console.log(`You chose "${user}" & Computer chose "${computer}"`);
         console.log('You Lost! Scissors Beats Paper!')
         roundWinner = 'computer';
     }
