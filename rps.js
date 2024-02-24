@@ -14,3 +14,21 @@ function getComputersChoice() {
 
     return computerSelection;
 }
+
+function startRound(playerSelection, computerSelection) {
+    let user = playerSelection;
+    let computer = computerSelection;
+
+    console.log(user);
+    console.log(computer);
+
+    return `${user} and ${computer}`;
+}
+
+function getUserChoice() {
+    let userChoice = prompt('Select your weapon of choice!');
+    return userChoice.toLowerCase();
+}
+
+
+startRound(getUserChoice(), getComputersChoice());
