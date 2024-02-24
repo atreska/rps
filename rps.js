@@ -57,9 +57,6 @@ function getUserChoice() {
     return userChoice.toLowerCase();
 }
 
-
-// console.log(startRound(getUserChoice(), getComputersChoice()));
-
 function playGame() {
     let userScore = 0
     let compScore = 0;
