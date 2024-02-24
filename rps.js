@@ -18,11 +18,32 @@ function getComputersChoice() {
 function startRound(playerSelection, computerSelection) {
     let user = playerSelection;
     let computer = computerSelection;
+    let roundWinner = '';
 
-    console.log(user);
-    console.log(computer);
+    if (user === computer) {
+        console.log(`You chose "${user}" & Computer chooses "${computer}"`);
+        roundWinner = 'Round Ends in a TIE!';
+    } else if (user === 'rock' && computer === 'scissors') {
+        console.log(`You chose "${user}" & Computer chose "${computer}"`);
+        roundWinner = 'You Won! Rock Beats Scissors!'
+    } else if (user === 'rock' && computer === 'paper') {
+        console.log(`You chose "${user}" & Computer chooses "${computer}"`);
+        roundWinner = 'You Lost! Paper Beats Rock!'
+    } else if (user === 'scissors' && computer === 'rock') {
+        console.log(`You chose "${user}" & Computer chooses "${computer}"`);
+        roundWinner = 'You Lost! Rock Beats Scissors!'
+    } else if (user === 'scissors' && computer === 'paper') {
+        console.log(`You chose "${user}" & Computer chooses "${computer}"`);
+        roundWinner = 'You Won! Scissors Beats Paper!'
+    } else if (user === 'paper' && computer === 'rock') {
+        console.log(`You chose "${user}" & Computer chooses "${computer}"`);
+        roundWinner = 'You Won! Paper Beats Rock!'
+    } else if (user === 'paper' && computer === 'scissors') {
+        console.log(`You chose "${user}" & Computer chooses "${computer}"`);
+        roundWinner = 'You Lost! Scissors Beats Paper!'
+    }
 
-    return `${user} and ${computer}`;
+    return roundWinner;
 }
 
 function getUserChoice() {
@@ -31,4 +52,5 @@ function getUserChoice() {
 }
 
 
-startRound(getUserChoice(), getComputersChoice());
+console.log(startRound(getUserChoice(), getComputersChoice()));
+
