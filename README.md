@@ -1,1 +1,1 @@
-# rps
+Create a Rock Paper Scissors game using 4 functions, getComputerChoice, getUserChoice, startRound, and playGame. This game will run for 5 rounds, and keep track of each players score. If a player wins a round their score will be incremented by one. Once the 5 rounds are over, whoever has the most points is declared the winner. 
