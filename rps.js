@@ -80,4 +80,20 @@ function playGame() {
 
 }
 
-playGame();
+let rockBtn = document.createElement('button');
+rockBtn.textContent = 'ROCK';
+let paperBtn = document.createElement('button');
+paperBtn.textContent = 'PAPER';
+let scissorsBtn = document.createElement('button');
+scissorsBtn.textContent = 'SCISSORS';
+let body = document.querySelector('body');
+
+body.append(rockBtn, paperBtn, scissorsBtn);
+
+
+let playerScoreTitle = document.createElement('h3');
+playerScoreTitle.textContent = 'Your Score: '
+let computerScoreTitle = document.createElement('h3');
+computerScoreTitle.textContent = 'Computers Score: '
+
+body.append(playerScoreTitle, computerScoreTitle)
