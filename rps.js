@@ -7,6 +7,42 @@ the computer wins the round.
 Display who won once the round is over. 
 */
 
+let rockBtn = document.createElement('button');
+rockBtn.textContent = 'ROCK';
+let paperBtn = document.createElement('button');
+paperBtn.textContent = 'PAPER';
+let scissorsBtn = document.createElement('button');
+scissorsBtn.textContent = 'SCISSORS';
+let body = document.querySelector('body');
+
+body.append(rockBtn, paperBtn, scissorsBtn);
+
+
+let userScoreTitle = document.createElement('h3');
+userScoreTitle.textContent = 'Your Score: '
+let computerScoreTitle = document.createElement('h3');
+computerScoreTitle.textContent = 'Computers Score: '
+
+body.append(userScoreTitle, computerScoreTitle)
+
+let allButtons = document.querySelectorAll('button');
+
+let userselection;
+
+for (button of allButtons) {
+    button.addEventListener('click', (e) => {
+        console.log(e.target.textContent);
+        userselection = e.target.textContent.toLowerCase();
+        console.log(userselection)
+
+        startRound(userselection, getComputersChoice());
+    })
+}
+
+startRound(userselection, getComputersChoice());
+
+
+
 function getComputersChoice() {
     let choices = ['rock', 'paper', 'scissors']
     let randNumberChoice = Math.floor(Math.random() * 3);
@@ -79,21 +115,3 @@ function playGame() {
         console.log(`The game ends in a TIE!\nComputer Score: ${compScore}\nYour Score: ${userScore}`);
 
 }
-
-let rockBtn = document.createElement('button');
-rockBtn.textContent = 'ROCK';
-let paperBtn = document.createElement('button');
-paperBtn.textContent = 'PAPER';
-let scissorsBtn = document.createElement('button');
-scissorsBtn.textContent = 'SCISSORS';
-let body = document.querySelector('body');
-
-body.append(rockBtn, paperBtn, scissorsBtn);
-
-
-let playerScoreTitle = document.createElement('h3');
-playerScoreTitle.textContent = 'Your Score: '
-let computerScoreTitle = document.createElement('h3');
-computerScoreTitle.textContent = 'Computers Score: '
-
-body.append(playerScoreTitle, computerScoreTitle)
