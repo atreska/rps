@@ -22,6 +22,7 @@ let userScoreTitle = document.createElement('label');
 let showUserScore = document.createElement('span');
 showUserScore.setAttribute('id', 'userScore');
 userScoreTitle.textContent = 'Your Score: '
+
 let computerScoreTitle = document.createElement('label');
 let showComputerScore = document.createElement('span');
 showComputerScore.setAttribute('id', 'computerScore');
@@ -35,6 +36,9 @@ let userselection;
 
 for (button of allButtons) {
     button.addEventListener('click', (e) => {
+        displayRoundWinner.textContent = '';
+        displayChoices.textContent = '';
+
         console.log(e.target.textContent);
         userselection = e.target.textContent.toLowerCase();
         console.log(userselection)
@@ -52,40 +56,57 @@ function getComputersChoice() {
     return computerSelection;
 }
 
+let userDisplayscore = 0;
+let computerDisplayScore = 0;
+
+let displayRoundWinner = document.createElement('p');
+let displayChoices = document.createElement('p');
+body.append(displayChoices, displayRoundWinner);
+
 function startRound(playerSelection, computerSelection) {
-    let userDisplayscore = 1;
     let user = playerSelection;
     let computer = computerSelection;
     let roundWinner = '';
 
     if (user === computer) {
-        console.log(`You chose "${user}" & Computer chose "${computer}"`);
-        console.log('Round Ends in a TIE!');
+        displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
+        displayRoundWinner.textContent = 'Round Ends in a TIE!';
     } else if (user === 'rock' && computer === 'scissors') {
-        console.log(`You chose "${user}" & Computer chose "${computer}"`);
-        console.log('You Won! Rock Beats Scissors!')
+        displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
+        displayRoundWinner.textContent = 'You Won! Rock Beats Scissors!';
         roundWinner = 'user';
-        userScoreTitle.textContent += userDisplayscore;
+        userDisplayscore += 1;
+        showUserScore.textContent = userDisplayscore;
     } else if (user === 'rock' && computer === 'paper') {
-        console.log(`You chose "${user}" & Computer chose "${computer}"`);
-        console.log('You Lost! Paper Beats Rock!')
+        displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
+        displayRoundWinner.textContent = 'You Lost! Paper Beats Rock!';
         roundWinner = 'computer';
+        computerDisplayScore += 1;
+        showComputerScore.textContent = computerDisplayScore;
     } else if (user === 'scissors' && computer === 'rock') {
-        console.log(`You chose "${user}" & Computer chose "${computer}"`);
-        console.log('You Lost! Rock Beats Scissors!')
+        displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
+        displayRoundWinner.textContent = 'You Lost! Rock Beats Scissors!';
         roundWinner = 'computer';
+        computerDisplayScore += 1;
+        showComputerScore.textContent = computerDisplayScore;
     } else if (user === 'scissors' && computer === 'paper') {
-        console.log(`You chose "${user}" & Computer chose "${computer}"`);
-        console.log('You Won! Scissors Beats Paper!')
+        displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
+        displayRoundWinner.textContent = 'You Won! Scissors Beats Paper!';
         roundWinner = 'user';
+        userDisplayscore += 1;
+        showUserScore.textContent = userDisplayscore;
     } else if (user === 'paper' && computer === 'rock') {
-        console.log(`You chose "${user}" & Computer chose "${computer}"`);
-        console.log('You Won! Paper Beats Rock!')
+        displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
+        displayRoundWinner.textContent = 'You Won! Paper Beats Rock!';
         roundWinner = 'user';
+        userDisplayscore += 1;
+        showUserScore.textContent = userDisplayscore;
     } else if (user === 'paper' && computer === 'scissors') {
-        console.log(`You chose "${user}" & Computer chose "${computer}"`);
-        console.log('You Lost! Scissors Beats Paper!')
+        displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
+        displayRoundWinner.textContent = 'You Lost! Scissors Beats Paper!';
         roundWinner = 'computer';
+        computerDisplayScore += 1;
+        showComputerScore.textContent = computerDisplayScore;
     }
 
     return roundWinner;
