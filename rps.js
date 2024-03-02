@@ -39,9 +39,7 @@ for (button of allButtons) {
         displayRoundWinner.textContent = '';
         displayChoices.textContent = '';
 
-        console.log(e.target.textContent);
         userselection = e.target.textContent.toLowerCase();
-        console.log(userselection)
 
         startRound(userselection, getComputersChoice());
     })
