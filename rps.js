@@ -42,6 +42,7 @@ for (button of allButtons) {
         userselection = e.target.textContent.toLowerCase();
 
         startRound(userselection, getComputersChoice());
+        decideWinner();
     })
 }
 
@@ -115,25 +116,22 @@ function getUserChoice() {
     return userChoice.toLowerCase();
 }
 
-function playGame() {
-    let userScore = 0
-    let compScore = 0;
+function decideWinner() {
 
-    for (let i = 0; i < 5; i++) {
-        let winner = startRound(getUserChoice(), getComputersChoice());
-
-        if (winner === 'user') {
-            userScore += 1;
-        } else if (winner === 'computer') {
-            compScore += 1;
-        }
+    if (userDisplayscore === 5) {
+        displayChoices.textContent = 'WINNER!'
+        displayRoundWinner.textContent = `You WON the game!\nComputer Score: ${computerDisplayScore} : Your Score: ${userDisplayscore}`;
+        userDisplayscore = 0;
+        computerDisplayScore = 0;
+        showUserScore.textContent = userDisplayscore;
+        showComputerScore.textContent = computerDisplayScore;
+    } else if (computerDisplayScore === 5) {
+        displayChoices.textContent = 'LOSER!';
+        displayRoundWinner.textContent = `You LOST the game!\nComputer Score: ${computerDisplayScore} : Your Score: ${userDisplayscore}`;
+        userDisplayscore = 0;
+        computerDisplayScore = 0;
+        showUserScore.textContent = userDisplayscore;
+        showComputerScore.textContent = computerDisplayScore;
     }
-
-    if (userScore > compScore) {
-        console.log(`You WON the game!\nComputer Score: ${compScore}\nYour Score: ${userScore}`);
-    } else if (userScore < compScore) {
-        console.log(`You LOST the game!\nComputer Score: ${compScore}\nYour Score: ${userScore}`);
-    } else
-        console.log(`The game ends in a TIE!\nComputer Score: ${compScore}\nYour Score: ${userScore}`);
 
 }
