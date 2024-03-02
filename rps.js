@@ -61,8 +61,8 @@ let displayRoundWinner = document.createElement('p');
 let displayChoices = document.createElement('p');
 body.append(displayChoices, displayRoundWinner);
 
-function startRound(playerSelection, computerSelection) {
-    let user = playerSelection;
+function startRound(userSelection, computerSelection) {
+    let user = userSelection;
     let computer = computerSelection;
     let roundWinner = '';
 
