@@ -13,6 +13,7 @@ h1 {
     font-size: 3rem;
     color: rgb(246, 72, 159);
     text-align: center;
+    padding-top: 3em;
 }
 
 label,
@@ -35,6 +36,13 @@ button {
     padding: 1em 2em;
     margin: .5em 0;
     font-family: 'Roboto', sans-serif;
+    box-shadow: 7px 6px 30px 5px rgb(249, 129, 189);
+
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 7px 6px 28px 1px rgba(252, 2, 160, 0.462);
 }
 
 .button-group {
