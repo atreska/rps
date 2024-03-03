@@ -6,6 +6,7 @@ If the users choice beats the computers choice, the user wins. Otherwise
 the computer wins the round.
 Display who won once the round is over. 
 */
+let body = document.querySelector('body');
 
 let rockBtn = document.createElement('button');
 rockBtn.textContent = 'ROCK';
@@ -13,9 +14,11 @@ let paperBtn = document.createElement('button');
 paperBtn.textContent = 'PAPER';
 let scissorsBtn = document.createElement('button');
 scissorsBtn.textContent = 'SCISSORS';
-let body = document.querySelector('body');
 
-body.append(rockBtn, paperBtn, scissorsBtn);
+let buttonDiv = document.createElement('div');
+
+buttonDiv.append(rockBtn, paperBtn, scissorsBtn);
+body.appendChild(buttonDiv);
 
 
 let userScoreTitle = document.createElement('label');
@@ -23,14 +26,18 @@ let showUserScore = document.createElement('span');
 showUserScore.textContent = '0';
 showUserScore.setAttribute('id', 'userScore');
 userScoreTitle.textContent = 'Your Score: '
+let userScoreDiv = document.createElement('div');
+userScoreDiv.append(userScoreTitle, showUserScore);
 
 let computerScoreTitle = document.createElement('label');
 let showComputerScore = document.createElement('span');
 showComputerScore.textContent = '0';
 showComputerScore.setAttribute('id', 'computerScore');
 computerScoreTitle.textContent = 'Computers Score: '
+let computerScoreDiv = document.createElement('div');
+computerScoreDiv.append(computerScoreTitle, showComputerScore);
 
-body.append(userScoreTitle, showUserScore, computerScoreTitle, showComputerScore)
+body.append(userScoreDiv, computerScoreDiv);
 
 let allButtons = document.querySelectorAll('button');
 
