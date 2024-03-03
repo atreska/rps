@@ -50,6 +50,7 @@ button:active {
     justify-content: center;
     padding: 1em 0;
     gap: 2em;
+    margin-bottom: .7em;
 }
 
 .score-group {
