@@ -16,7 +16,6 @@ let scissorsBtn = document.createElement('button');
 scissorsBtn.textContent = 'SCISSORS';
 
 let buttonDiv = document.createElement('div');
-
 buttonDiv.append(rockBtn, paperBtn, scissorsBtn);
 buttonDiv.setAttribute('class', 'button-group');
 body.appendChild(buttonDiv);
@@ -35,7 +34,7 @@ let computerScoreTitle = document.createElement('label');
 let showComputerScore = document.createElement('span');
 showComputerScore.textContent = '0';
 showComputerScore.setAttribute('id', 'computerScore');
-computerScoreTitle.textContent = 'Computers Score: '
+computerScoreTitle.textContent = 'Computer Score: '
 let computerScoreDiv = document.createElement('div');
 computerScoreDiv.append(computerScoreTitle, showComputerScore);
 computerScoreDiv.setAttribute('class', 'score-group');
@@ -43,7 +42,6 @@ computerScoreDiv.setAttribute('class', 'score-group');
 body.append(userScoreDiv, computerScoreDiv);
 
 let allButtons = document.querySelectorAll('button');
-
 let userselection;
 
 for (button of allButtons) {
@@ -57,7 +55,6 @@ for (button of allButtons) {
         decideWinner();
     })
 }
-
 
 function getComputersChoice() {
     let choices = ['rock', 'paper', 'scissors']
@@ -77,7 +74,6 @@ body.append(displayChoices, displayRoundWinner);
 function startRound(userSelection, computerSelection) {
     let user = userSelection;
     let computer = computerSelection;
-    let roundWinner = '';
 
     if (user === computer) {
         displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
@@ -85,47 +81,36 @@ function startRound(userSelection, computerSelection) {
     } else if (user === 'rock' && computer === 'scissors') {
         displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
         displayRoundWinner.textContent = 'You Won! Rock Beats Scissors!';
-        roundWinner = 'user';
         userDisplayscore += 1;
         showUserScore.textContent = userDisplayscore;
     } else if (user === 'rock' && computer === 'paper') {
         displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
         displayRoundWinner.textContent = 'You Lost! Paper Beats Rock!';
-        roundWinner = 'computer';
         computerDisplayScore += 1;
         showComputerScore.textContent = computerDisplayScore;
     } else if (user === 'scissors' && computer === 'rock') {
         displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
         displayRoundWinner.textContent = 'You Lost! Rock Beats Scissors!';
-        roundWinner = 'computer';
         computerDisplayScore += 1;
         showComputerScore.textContent = computerDisplayScore;
     } else if (user === 'scissors' && computer === 'paper') {
         displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
         displayRoundWinner.textContent = 'You Won! Scissors Beats Paper!';
-        roundWinner = 'user';
         userDisplayscore += 1;
         showUserScore.textContent = userDisplayscore;
     } else if (user === 'paper' && computer === 'rock') {
         displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
         displayRoundWinner.textContent = 'You Won! Paper Beats Rock!';
-        roundWinner = 'user';
         userDisplayscore += 1;
         showUserScore.textContent = userDisplayscore;
     } else if (user === 'paper' && computer === 'scissors') {
         displayChoices.textContent = `You chose "${user}" & Computer chose "${computer}"`;
         displayRoundWinner.textContent = 'You Lost! Scissors Beats Paper!';
-        roundWinner = 'computer';
         computerDisplayScore += 1;
         showComputerScore.textContent = computerDisplayScore;
     }
 
-    return roundWinner;
-}
 
-function getUserChoice() {
-    let userChoice = prompt('Select your weapon of choice!');
-    return userChoice.toLowerCase();
 }
 
 function decideWinner() {
