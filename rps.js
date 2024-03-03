@@ -20,11 +20,13 @@ body.append(rockBtn, paperBtn, scissorsBtn);
 
 let userScoreTitle = document.createElement('label');
 let showUserScore = document.createElement('span');
+showUserScore.textContent = '0';
 showUserScore.setAttribute('id', 'userScore');
 userScoreTitle.textContent = 'Your Score: '
 
 let computerScoreTitle = document.createElement('label');
 let showComputerScore = document.createElement('span');
+showComputerScore.textContent = '0';
 showComputerScore.setAttribute('id', 'computerScore');
 computerScoreTitle.textContent = 'Computers Score: '
 
