@@ -18,6 +18,7 @@ scissorsBtn.textContent = 'SCISSORS';
 let buttonDiv = document.createElement('div');
 
 buttonDiv.append(rockBtn, paperBtn, scissorsBtn);
+buttonDiv.setAttribute('class', 'button-group');
 body.appendChild(buttonDiv);
 
 
@@ -28,6 +29,7 @@ showUserScore.setAttribute('id', 'userScore');
 userScoreTitle.textContent = 'Your Score: '
 let userScoreDiv = document.createElement('div');
 userScoreDiv.append(userScoreTitle, showUserScore);
+userScoreDiv.setAttribute('class', 'score-group');
 
 let computerScoreTitle = document.createElement('label');
 let showComputerScore = document.createElement('span');
@@ -36,6 +38,7 @@ showComputerScore.setAttribute('id', 'computerScore');
 computerScoreTitle.textContent = 'Computers Score: '
 let computerScoreDiv = document.createElement('div');
 computerScoreDiv.append(computerScoreTitle, showComputerScore);
+computerScoreDiv.setAttribute('class', 'score-group');
 
 body.append(userScoreDiv, computerScoreDiv);
 
