@@ -1,1 +1,2 @@
-Create a Rock Paper Scissors game using 4 functions, getComputerChoice, getUserChoice, startRound, and playGame. This game will run for 5 rounds, and keep track of each players score. If a player wins a round their score will be incremented by one. Once the 5 rounds are over, whoever has the most points is declared the winner. 
+Create a Rock Paper Scissors game maily using DOM manipulation. This game will run until a player reaches the score of 5. The program will keep track of each players score. The results of the round will be printed on the screen, with what each player chose as a selection, and who won the round or if it was a tie. Once a winner is decided, the result will be printed on the screen and the final scores
+for each player. 
